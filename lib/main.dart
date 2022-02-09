@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/PaymentHistoryInformation.dart';
 
 void main() async{
-final response= ({"contractNumber":"AC499702","type":"MM","amount":38000,"date":"2018-05-04T00:00:00.000Z","mobile":"265995935569","status":"ACCEPTED","ccy":"MWK","transactionId":"MP180504.0841.G38071"});
-print(response.toString());
+ final response= ({"contractNumber":"AC499702","type":"MM","amount":38000,"date":"2018-05-04T00:00:00.000Z","mobile":"265995935569","status":"ACCEPTED","ccy":"MWK","transactionId":"MP180504.0841.G38071"});
+//print(response);
 PaymentHistoryInformation phi= PaymentHistoryInformation.fromJson((response));
   runApp(
     MyApp(
-      items: List<String>.generate(10000, (i) => 'Item $i'),
+      items: List<String>.generate(10, (i) => phi.amount.toString()),
     ),
   );
 }
