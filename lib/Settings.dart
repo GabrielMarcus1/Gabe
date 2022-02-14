@@ -1,272 +1,375 @@
-  //import 'dart:convert';
-//import 'dart:ffi';
-import 'dart:html';
-
+//import '../flutter_flow/flutter_flow_icon_button.dart';
+//import '../flutter_flow/flutter_flow_theme.dart';
+//import '../flutter_flow/flutter_flow_util.dart';
+//import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/PaymentHistoryInformation.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
-void main() async {
-  var response = [
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 38000,
-      "date": "2018-05-04T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180504.0841.G38071"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-11T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180511.1411.D81858"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-14T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180514.1620.H36449"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-14T00:00:00.000Z",
-      "mobile": "265999383457",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180514.1710.G37117"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-15T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180515.1151.H44073"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 55000,
-      "date": "2018-05-19T00:00:00.000Z",
-      "mobile": "265999272701",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180519.0936.G79452"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 55000,
-      "date": "2018-05-19T00:00:00.000Z",
-      "mobile": "265999272701",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180519.0949.G79549"
-    }
-  ];
 
-//
-//
-//\\ ignore: deprecated_member_use
-/*List notes=  List<PaymentHistoryInformation>();
-Future<List<PaymentHistoryInformation>>  fetchNotes() async{
+//FlutterFlowTheme.of(context).title3.override
+//style: FlutterFlowTheme.of(context) 
+//  FlutterFlowIconButton(
 
-\
-var notesJson=json.decode(response.toString());
 
-for(var noteJson in notesJson){
-  notes.add(PaymentHistoryInformation.fromJson(noteJson));
-}*/
-//List<PaymentHistoryInformation> list1;//=PaymentHistoryInformation.fromJson(response[1]);
 
-  PaymentHistoryInformation payments =
-      PaymentHistoryInformation.fromJson((response[1]));
+class SettingsPageWidget extends StatefulWidget {
+  const SettingsPageWidget({Key key}) : super(key: key);
 
-  //for(var i=1; i<=5;i++){
-  //  PaymentHistoryInformation payments =  PaymentHistoryInformation.fromJson((response[i])) ;
-  // List1[i].add(payments);
-//}
-  // payments.toJson(); //make a loop to populate toJson the responses
-  // var monz = payments.amount;
-  /////JSON IS ALREADY IN ARRAYS LOOK AT PAYMENT HISTORYINFORMATION
-//}
-  runApp(
-    MyApp(
-      items: List<String>.generate(2, (i) => payments.amount.toString()),
-    ),
-  );
+  @override
+  _SettingsPageWidgetState createState() => _SettingsPageWidgetState();
 }
 
-class MyApp extends StatelessWidget {
-  final List<String> items;
+class _SettingsPageWidgetState extends State<SettingsPageWidget> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
-  static const String _title = 'Flutter Code Sample';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Color(0xFF262D34),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 160,
+            decoration: BoxDecoration(
+              color: Color(0xFF39D2C0),
+            ),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Card(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Color(0xFF30B2A3),
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          'https://picsum.photos/seed/339/600',
+                          width: 80,
+                          height: 80,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '[Username]',
+                            style: FlutterFlowTheme.of(context).title3.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '[Email_Address]',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xB4FFFFFF),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Material(
+                  color: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF262D34),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Color(0xFF090F13),
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Edit Profile',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30,
+                            buttonSize: 46,
+                            icon: Icon(
+                              Icons.chevron_right_rounded,
+                              color: Color(0xFF95A1AC),
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Material(
+                  color: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF262D34),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Color(0xFF090F13),
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Change Password',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30,
+                            buttonSize: 46,
+                            icon: Icon(
+                              Icons.chevron_right_rounded,
+                              color: Color(0xFF95A1AC),
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Material(
+                  color: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF262D34),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Color(0xFF090F13),
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Notification Settings',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30,
+                            buttonSize: 46,
+                            icon: Icon(
+                              Icons.chevron_right_rounded,
+                              color: Color(0xFF95A1AC),
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Material(
+                  color: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF262D34),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Color(0xFF090F13),
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Terms of Services',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30,
+                            buttonSize: 46,
+                            icon: Icon(
+                              Icons.chevron_right_rounded,
+                              color: Color(0xFF95A1AC),
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 40),
+            child: FFButtonWidget(
+              onPressed: () {
+                print('Button pressed ...');
+              },
+              text: 'Back',
+              options: FFButtonOptions(
+                width: 110,
+                height: 50,
+                color: Color(0xFF090F13),
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                elevation: 0,
+                borderSide: BorderSide(
+                  color: Color(0xFF090F13),
+                  width: 1,
+                ),
+                borderRadius: 8,
+              ),
+            ),
+          ),
+        ],
       ),
-    );
-  }
-}
-
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  var response = [
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 38000,
-      "date": "2018-05-04T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180504.0841.G38071"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-11T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180511.1411.D81858"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-14T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180514.1620.H36449"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-14T00:00:00.000Z",
-      "mobile": "265999383457",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180514.1710.G37117"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 7500,
-      "date": "2018-05-15T00:00:00.000Z",
-      "mobile": "265995935569",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180515.1151.H44073"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 55000,
-      "date": "2018-05-19T00:00:00.000Z",
-      "mobile": "265999272701",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180519.0936.G79452"
-    },
-    {
-      "contractNumber": "AC499702",
-      "type": "MM",
-      "amount": 55000,
-      "date": "2018-05-19T00:00:00.000Z",
-      "mobile": "265999272701",
-      "status": "ACCEPTED",
-      "ccy": "MWK",
-      "transactionId": "MP180519.0949.G79549"
-    }
-  ];
-
-  bool _customTileExpanded = false;
-
-  @override
-  Widget build(BuildContext context) {
-    PaymentHistoryInformation payments =
-        PaymentHistoryInformation.fromJson((response[1]));
-    List<PaymentHistoryInformation> list1 = [payments];
-    for (int p = 0; p < 5; p++) {
-      list1.add(PaymentHistoryInformation.fromJson(response[p]));
-    }
-    // var amount= payments.amount;
-    List<String> date = ["red"];
-    for (var i = 0; i < 5; i++) {
-      date.add(list1[i].date.toString());
-    }
-    var dates = payments.date;
-    var ccy = payments.ccy;
-    var status = payments.status;
-    var date3 = date[2].toString();
-   /* return Column(
-      children: <Widget>[
-          ExpansionTile(
-            title: Text("$date3 "),
-            subtitle: Text('$ccy'),
-            children: <Widget>[
-              ListTile(title: Text('$status')),
-            ],
-          ),
-      ],
-    ); */
-    DropDownInformation(payments);
-    
-    // }
-  }
-}
-
-PaymentHistoryInformation getPaymentInfo(var text, int num) {
-  PaymentHistoryInformation neb = (PaymentHistoryInformation.fromJson(text[5]));
-  return neb;
-}
-
-class DropDownInformation extends StatelessWidget{
- // final String name= PaymentHistoryInformation.fromJson(response[5]) ;
-final PaymentHistoryInformation name;
-  const DropDownInformation(this.name);
-
-  @override
-  Widget build(BuildContext context){
- return Column(
-      children: <Widget>[
-          ExpansionTile(
-            title: Text("$name "),
-            subtitle: Text('$name'),
-            children: <Widget>[
-              ListTile(title: Text('$name')),
-            ],
-          ),
-      ],
     );
   }
 }
