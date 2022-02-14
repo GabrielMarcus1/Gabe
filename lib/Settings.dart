@@ -2,18 +2,17 @@
 //import '../flutter_flow/flutter_flow_theme.dart';
 //import '../flutter_flow/flutter_flow_util.dart';
 //import '../flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
-
 //FlutterFlowTheme.of(context).title3.override
-//style: FlutterFlowTheme.of(context) 
+//style: FlutterFlowTheme.of(context)
 //  FlutterFlowIconButton(
 
-
-
 class SettingsPageWidget extends StatefulWidget {
-  const SettingsPageWidget({Key key}) : super(key: key);
+  const SettingsPageWidget({Key? key}) : super(key: key);
 
   @override
   _SettingsPageWidgetState createState() => _SettingsPageWidgetState();
@@ -71,27 +70,12 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '[Username]',
-                            style: FlutterFlowTheme.of(context).title3.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
+                          Text('[Username]', style: TextStyle()),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
                               '[Email_Address]',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xB4FFFFFF),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                              style: TextStyle(),
                             ),
                           ),
                         ],
@@ -133,26 +117,29 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         children: [
                           Text(
                             'Edit Profile',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            buttonSize: 46,
-                            icon: Icon(
-                              Icons.chevron_right_rounded,
-                              color: Color(0xFF95A1AC),
-                              size: 20,
+                            style: TextStyle(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
+                          ),
+                          Card(
+                            elevation: 10,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
+                            margin: const EdgeInsets.all(30),
+                            child: MaterialButton(
+                              child: const Text(
+                                'Query Session State',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              onPressed: () {
+                                // fuction();
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -193,26 +180,37 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         children: [
                           Text(
                             'Change Password',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            buttonSize: 46,
-                            icon: Icon(
-                              Icons.chevron_right_rounded,
-                              color: Color(0xFF95A1AC),
-                              size: 20,
+                            style: TextStyle(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 7, 0, 0),
+                            child: InkWell(
+                              onTap: () {
+                                // fuction();
+                              },
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Icon(
+                                    Icons.info,
+                                    color: Colors.blue,
+                                    size: 30,
+                                  ),
+                                  Text(
+                                    'Smartphone info',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      color: Color(0xFFf5f000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -253,26 +251,37 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         children: [
                           Text(
                             'Notification Settings',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            buttonSize: 46,
-                            icon: Icon(
-                              Icons.chevron_right_rounded,
-                              color: Color(0xFF95A1AC),
-                              size: 20,
+                            style: TextStyle(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 7, 0, 0),
+                            child: InkWell(
+                              onTap: () {
+                                // fnction
+                              },
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Icon(
+                                    Icons.info,
+                                    color: Colors.blue,
+                                    size: 30,
+                                  ),
+                                  Text(
+                                    'click ',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      color: Color(0xFFf5f000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),
