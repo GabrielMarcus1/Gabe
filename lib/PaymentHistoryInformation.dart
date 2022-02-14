@@ -13,6 +13,12 @@ class PaymentHistoryInformation {
   String? _ccy;
   String? _transactionId;
 
+/**
+ * Change this 
+ * take in 1 string 
+ * Make String from inner json con num -> end 
+ * then send here 
+ */
   PaymentHistoryInformation(
       {String? contractNumber,
       String? type,
@@ -79,14 +85,14 @@ class PaymentHistoryInformation {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    //data['contractNumber'] = this._contractNumber;
-  //  data['type'] = this._type;
+    data['contractNumber'] = this._contractNumber;
+    data['type'] = this._type;
     data['amount'] = this._amount;
     data['date'] = this._date;
     data['mobile'] = this._mobile;
-    //data['status'] = this._status;
+    data['status'] = this._status;
     data['ccy'] = this._ccy;
-    //data['transactionId'] = this._transactionId;
+    data['transactionId'] = this._transactionId;
     return data;
   }
 }
