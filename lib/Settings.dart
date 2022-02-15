@@ -1,5 +1,20 @@
+<<<<<<< HEAD
 import 'dart:ui';
 import 'package:flutter/material.dart';
+=======
+//import '../flutter_flow/flutter_flow_icon_button.dart';
+//import '../flutter_flow/flutter_flow_theme.dart';
+//import '../flutter_flow/flutter_flow_util.dart';
+//import '../flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+//import 'package:google_fonts/google_fonts.dart';
+
+//FlutterFlowTheme.of(context).title3.override
+//style: FlutterFlowTheme.of(context)
+//  FlutterFlowIconButton(
+>>>>>>> 0d2824a3cd8f18c24d5165b82dfff0fa8873f2da
 
 class SettingsPageWidget extends StatefulWidget {
   const SettingsPageWidget({Key? key}) : super(key: key);

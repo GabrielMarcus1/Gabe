@@ -1,14 +1,14 @@
-  //import 'dart:convert';
+//import 'dart:convert';
 //import 'dart:ffi';
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/PaymentHistoryInformation.dart';
+import 'PaymentHistoryInformation.dart';
 
 void main() async {
   runApp(
     MyApp(
-      items: List<String>.generate(2, (i) => "" ),
+      items: List<String>.generate(2, (i) => ""),
     ),
   );
 }
@@ -120,16 +120,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
    * REMEBER TO REPLACE LIST WITH LINKS TO JSON FILE WE WILL BE USING.
    */
   Widget build(BuildContext context) {
-    PaymentHistoryInformation payments = PaymentHistoryInformation.fromJson((response[0])); 
-    List<PaymentHistoryInformation> list1 = [payments]; //initialising array 
-    for (int p = 1; p < response.length; p++) { 
+    PaymentHistoryInformation payments =
+        PaymentHistoryInformation.fromJson((response[0]));
+    List<PaymentHistoryInformation> list1 = [payments]; //initialising array
+    for (int p = 1; p < response.length; p++) {
       list1.add(PaymentHistoryInformation.fromJson(response[p]));
     }
     return Column(
       children: <Widget>[
         for (var i = 0; i < response.length; i++)
           IndividualPaymentHistory(list1[i].date.toString(),
-          list1[i].amount.toString(),list1[i].ccy.toString())
+              list1[i].amount.toString(), list1[i].ccy.toString())
       ],
     );
   }
@@ -138,23 +139,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 /**
  * populates the individual drop down list
  */
-class IndividualPaymentHistory extends StatelessWidget{
-final String amount;
-final String currency;
-final String date;
-const IndividualPaymentHistory(this.date,this.amount,this.currency);
+class IndividualPaymentHistory extends StatelessWidget {
+  final String amount;
+  final String currency;
+  final String date;
+  const IndividualPaymentHistory(this.date, this.amount, this.currency);
 
-@override
-Widget build(BuildContext context){
-  
-  return ExpansionTile(
-   title: Text("$date"),
-  subtitle: Text('$amount'),
-  children: <Widget>[
-              ListTile(title: Text('$currency')),
-            ],
-  ) ;
-}
-
-
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      title: Text("$date"),
+      subtitle: Text('$amount'),
+      children: <Widget>[
+        ListTile(title: Text('$currency')),
+      ],
+    );
+  }
 }

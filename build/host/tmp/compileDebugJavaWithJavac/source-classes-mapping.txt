@@ -1,0 +1,4 @@
+com/example/flutter_application_2/host/MainActivity.java
+ com.example.flutter_application_2.host.MainActivity
+com/example/flutter_application_2/host/BuildConfig.java
+ com.example.flutter_application_2.host.BuildConfig
