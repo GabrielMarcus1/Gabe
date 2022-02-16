@@ -5,13 +5,7 @@
 import 'package:flutter/material.dart';
 import 'PaymentHistoryInformation.dart';
 
-void main() async {
-  runApp(
-    MyApp(
-      items: List<String>.generate(2, (i) => ""),
-    ),
-  );
-}
+
 
 class MyApp extends StatelessWidget {
   final List<String> items;
