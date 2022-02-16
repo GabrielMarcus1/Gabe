@@ -19,17 +19,44 @@ class FirstRoute extends StatelessWidget {
       appBar: AppBar(
         title: const Text('First Route'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.push(
-            // SettingsPageWidget();
-              context,
-              MaterialPageRoute(builder: (context) =>  PaymentPopUpWidget() ) // const SecondRoute()),
-            );
-          },
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new ElevatedButton(
+            child: const Text(' PaymentHistory'),
+            onPressed: () {
+              Navigator.push(
+                  // SettingsPageWidget();
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MyApp()) // const SecondRoute()),
+                  );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Settings'),
+            onPressed: () {
+              Navigator.push(
+                  // SettingsPageWidget();
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          SettingsPageWidget()) // const SecondRoute()),
+                  );
+            },
+          ),
+          new ElevatedButton(
+            child: const Text('Pop up'),
+            onPressed: () {
+              Navigator.push(
+                  // SettingsPageWidget();
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PaymentPopUpWidget()) // const SecondRoute()),
+                  );
+            },
+          ),
+        ],
       ),
     );
   }

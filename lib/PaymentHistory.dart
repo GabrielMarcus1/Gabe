@@ -8,9 +8,9 @@ import 'PaymentHistoryInformation.dart';
 
 
 class MyApp extends StatelessWidget {
-  final List<String> items;
+ // final List<String> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
   static const String _title = 'Payment History';
   @override
   Widget build(BuildContext context) {

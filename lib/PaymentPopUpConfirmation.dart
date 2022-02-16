@@ -190,7 +190,7 @@ class _PaymentPopUpWidgetState extends State<PaymentPopUpWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 12, 20, 12),
                       child: ElevatedButton(
-                        child: const Text('Open route'),
+                        child: const Text('Confirm'),
                         onPressed: () {
                           //  Navigator.push(
                           // SettingsPageWidget();
