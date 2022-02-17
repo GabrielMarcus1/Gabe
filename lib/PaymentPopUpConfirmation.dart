@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
 class PaymentPopUpWidget extends StatefulWidget {
-  const PaymentPopUpWidget({Key? key, required}) : super(key: key);
+  const PaymentPopUpWidget({Key? key}) : super(key: key);
 
   @override
   _PaymentPopUpWidgetState createState() => _PaymentPopUpWidgetState();

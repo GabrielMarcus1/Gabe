@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/PaymentPopUpConfirmation.dart';
+import 'package:flutter_application_2/PaymentStatus.dart';
 import 'PaymentHistory.dart';
 import 'Settings.dart';
 
@@ -53,6 +54,17 @@ class FirstRoute extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => PaymentPopUpWidget()) // const SecondRoute()),
+                  );
+            },
+          ),
+          new ElevatedButton(
+            child: const Text('Pop up'),
+            onPressed: () {
+              Navigator.push(
+                  // SettingsPageWidget();
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PaymentconfirmationWidget()) // const SecondRoute()),
                   );
             },
           ),
