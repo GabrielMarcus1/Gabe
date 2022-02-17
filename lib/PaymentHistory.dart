@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'PaymentHistoryInformation.dart';
 
 
-
+//TODO get link to the json and read it in
 class MyApp extends StatelessWidget {
  // final List<String> items;
 

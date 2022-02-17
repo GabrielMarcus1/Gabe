@@ -39,7 +39,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Padding(
+
+                    //TOADD USER PHOTO IF WE WANT TO 
+                  /*  child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
@@ -50,7 +52,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                    ),
+                    ), */
                   ),
                   Expanded(
                     child: Padding(
@@ -60,11 +62,12 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('[Username]', style: TextStyle()),
+                          Text('[Username]',   //TODO GET NAME
+                           style: TextStyle()), 
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
-                              '[Email_Address]',
+                              '[Email_Address]', //TODO GET EMAIL OR ACCOUNT NUMBER MAYBE
                               style: TextStyle(),
                             ),
                           ),

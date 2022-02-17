@@ -4,6 +4,9 @@ import 'package:flutter_application_2/PaymentStatus.dart';
 import 'PaymentHistory.dart';
 import 'Settings.dart';
 
+
+
+//CLASS USED FOR TESTING
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
@@ -58,7 +61,7 @@ class FirstRoute extends StatelessWidget {
             },
           ),
           new ElevatedButton(
-            child: const Text('Pop up'),
+            child: const Text('Payment confirmation'),
             onPressed: () {
               Navigator.push(
                   // SettingsPageWidget();

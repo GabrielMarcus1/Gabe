@@ -2,6 +2,8 @@
 //import '../flutter_flow/flutter_flow_theme.dart';
 //import '../flutter_flow/flutter_flow_util.dart';
 //import '../flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -38,6 +40,7 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
                     ),
                     margin: const EdgeInsets.all(30),
                     child: MaterialButton(
+                      //button to query payment or for help if we want to add this feature ???
                       child: const Text(
                         'Query Session State',
                         style: TextStyle(color: Colors.grey),
@@ -51,28 +54,13 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-              child: Card(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                color: Color(0xFF4B39EF),
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(70),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                child: StatusDisplay("confirmed") // TODO SEND STATUS FROM HERE, this method is lower down
                 ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
-                  child: Icon(
-                    Icons.check_rounded,
-                    color: Colors.white,
-                    size: 60,
-                  ),
-                ),
-              ),
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: Text(
-                'Payment Confirmed!', //add backend of payment confirmed or denied or pending
+                'Payment Confirmed!', //TODO add backend of payment confirmed or denied or pending
                 style: TextStyle(
                   fontFamily: 'Lexend Deca',
                   color: Color(0xFF4B39EF),
@@ -84,7 +72,7 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: Text(
-                '\$425.24', //add backend of amount
+                '\$425.24', //TODO ADD AMOUNT PAID
                 style: TextStyle(
                   fontFamily: 'Lexend Deca',
                   color: Color(0xFF8B97A2),
@@ -122,15 +110,6 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                      child: Image.asset(
-                        'assets/images/masterCard@2x.png',
-                        width: 40,
-                        height: 40,
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -140,7 +119,7 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Text(
-                              'Mastercard Ending in 4021',
+                              'Mastercard Ending in 4021', //TODO ADD END OF ACCOUNT NUMBER THEY USED
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0xFF8B97A2),
@@ -152,7 +131,7 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Text(
-                              '\$425.24',
+                              '\$425.24', //TODO ADD AMOUNT THEY PAID
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
                                 color: Colors.white,
@@ -168,44 +147,66 @@ class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
                 ),
               ),
             ),
-            /*  Expanded(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
-                      text: 'Go Home',
-                      options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        color: Color(0xFF1E2429),
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                        elevation: 0,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 40,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ), */
           ],
         ),
       ),
     );
   }
+}
+
+
+/**
+ * image of tick cross or pending showing current status of payment
+ */
+class StatusDisplay extends StatelessWidget {
+  final String status;
+  const StatusDisplay(this.status);
+  @override
+  Widget build(BuildContext context) {
+    if(status == "confirmed") { //add a pending option in if statement
+      return Card(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        color: Color.fromARGB(255, 40, 238, 0), //TODO if statemtns depending on if payment complete pending or declined,
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(70),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
+          child: Icon(
+            Icons.check_outlined, //TODO if statemtns depending on if payment complete pending or declined, (use check_circle_outlined for confirmed)
+            color: Colors.white, //TODO if statemtns depending on if payment complete pending or declined
+            size: 90,
+          ),
+        ),
+      );
+    }
+     else{
+      return Card(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        color: Color.fromARGB(255, 40, 238, 0), //TODO if statemtns depending on if payment complete pending or declined,
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(70),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
+          child: Icon(
+            Icons
+                .close, //TODO if statemtns depending on if payment complete pending or declined, (use check_circle_outlined for confirmed)
+            color: Colors
+                .white, //TODO if statemtns depending on if payment complete pending or declined
+            size: 90,
+          ),
+        ),
+      );
+    }
+  }
+
+
+
+
+
+
+
 }
