@@ -16,6 +16,15 @@ class PaymentconfirmationWidget extends StatefulWidget {
 }
 
 class _PaymentconfirmationWidgetState extends State<PaymentconfirmationWidget> {
+
+//INIT STATE
+ @override
+  initState() {
+    super.initState();
+  }
+
+
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

@@ -9,6 +9,12 @@ class SettingsPageWidget extends StatefulWidget {
 }
 
 class _SettingsPageWidgetState extends State<SettingsPageWidget> {
+
+ @override
+  initState() {
+    super.initState();
+   
+  }
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

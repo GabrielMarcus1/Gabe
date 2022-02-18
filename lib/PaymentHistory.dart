@@ -150,3 +150,100 @@ class IndividualPaymentHistory extends StatelessWidget {
     );
   }
 }
+
+/*
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'payments_object.dart';
+import 'package:yellow_customer_app/Interface/Upya/payments_api.dart';
+
+class PaymentHistoryList extends StatefulWidget {
+  const PaymentHistoryList({Key? key}) : super(key: key);
+
+  @override
+  State<PaymentHistoryList> createState() => _PaymentHistoryListState();
+}
+
+// STATE CLASS
+class _PaymentHistoryListState extends State<PaymentHistoryList> {
+  // INSTANCE VARS
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  List<PaymentHistoryInformation> PaymentsList = [];
+  List<Map<String:dynamic>?> response = [];
+  // INIT STATE
+  @override
+  initState() {
+    super.initState();
+    _fromJsonIterator(response);
+  }
+
+  // TAKES IN A LIST OF MAPS AND CREATES PAYMENT OBJECTS LIST
+  void _fromJsonIterator(List<Map<String, dynamic>> _mappedResponse) {
+    // INSERT INTO LIST
+    for (int p = 0; p < _mappedResponse.length; p++) {
+      PaymentsList.add(PaymentHistoryInformation.fromJson(_mappedResponse[p]));
+    }
+  }
+
+  // call api function to get payments string
+  void _callApi() async {
+    String? tempString = await getPayments("AC499702", "Malawi");
+    var response1 = tempString!.split(",").cast<Map<String, Object>>();
+
+    for (var it = 0; it < response1.length; it++) {
+
+    }
+
+  }
+
+  /**
+   * builds the body of the page.
+   * Currenlty reafing in data from a list. 
+   * REMEBER TO REPLACE LIST WITH LINKS TO JSON FILE WE WILL BE USING.
+   */
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Color(0xFFD9E5EE),
+      body: Column(
+        children: <Widget>[
+          // const IndividualPaymentHistory("test", "12345678", "qwertyuio")
+          for (var i = 0; i < response.length; i++)
+            IndividualPaymentHistory(
+                PaymentsList[i].date.toString(),
+                PaymentsList[i].amount.toString(),
+                PaymentsList[i].ccy.toString())
+        ],
+      ),
+    );
+  }
+}
+
+/**
+ * populates the individual drop down list
+ */
+class IndividualPaymentHistory extends StatelessWidget {
+  final String amount;
+  final String currency;
+  final String date;
+  const IndividualPaymentHistory(this.date, this.amount, this.currency);
+
+  String _getDateFromTZZ(String inString) {
+    return DateFormat.yMMMd()
+        .format(DateTime.parse(inString.substring(0, 10)))
+        .toString();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      title: Text(_getDateFromTZZ('$date')),
+      subtitle: Text('$amount'),
+      children: <Widget>[
+        ListTile(title: Text('$currency')),
+      ],
+    );
+  }
+}
+*/
