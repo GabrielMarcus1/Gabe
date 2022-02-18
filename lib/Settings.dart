@@ -1,4 +1,6 @@
 //import 'dart:ui';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class SettingsPageWidget extends StatefulWidget {
@@ -9,19 +11,27 @@ class SettingsPageWidget extends StatefulWidget {
 }
 
 class _SettingsPageWidgetState extends State<SettingsPageWidget> {
-
- @override
+  Color backgroundColour = Color(0xFF262D34);
+  Color usernameAndPictureBackgroundColor = Color.fromARGB(255, 148, 9, 113);
+  Color settingOptionsText = Color.fromARGB(255, 6, 175, 226);
+  Color settingOptionsIcons = Colors.white;
+  Color settingsOptionsIconsText = Color.fromARGB(255, 14, 219, 99);
+  Color settingsOptionBorderBox = Color.fromARGB(255, 255, 1, 1);
+  String settingsOptionsTextFont = "Lexend Deca";
+  double settingOptionsTextSize = 20;
+  Color settingsOptionsBox=Color.fromARGB(255, 240, 28, 28);
+  @override
   initState() {
     super.initState();
-   
   }
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFF262D34),
+      backgroundColor: backgroundColour,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -29,7 +39,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
             width: MediaQuery.of(context).size.width,
             height: 160,
             decoration: BoxDecoration(
-              color: Color(0xFF39D2C0),
+              color: usernameAndPictureBackgroundColor,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
@@ -38,16 +48,16 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  //TO ADD USER PHOTO IF WE WANT TO
                   Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: Color(0xFF30B2A3),
+                      /*  clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Color.fromARGB(255, 255, 1, 1),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                      borderRadius: BorderRadius.circular(18),
+                    ),*/
 
-                    //TOADD USER PHOTO IF WE WANT TO 
-                  /*  child: Padding(
+                      /*  child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
@@ -59,7 +69,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         ),
                       ),
                     ), */
-                  ),
+                      ),
                   Expanded(
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
@@ -68,8 +78,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('[Username]',   //TODO GET NAME
-                           style: TextStyle()), 
+                          Text('[Username]', //TODO GET NAME
+                              style: TextStyle()),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
@@ -92,7 +102,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Material(
-                  color: Colors.transparent,
+                  color: Color.fromARGB(0, 0, 0, 0),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -101,10 +111,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color(0xFF262D34),
+                      color: settingsOptionsBox,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: Color(0xFF090F13),
+                        color: settingsOptionBorderBox,
                         width: 2,
                       ),
                     ),
@@ -117,9 +127,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           Text(
                             'Edit Profile',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
+                              fontFamily: settingsOptionsTextFont,
+                              color: settingOptionsText,
+                              fontSize: settingOptionsTextSize,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -164,10 +174,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color(0xFF262D34),
+                      color: settingsOptionsBox,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: Color(0xFF090F13),
+                        color: settingsOptionBorderBox,
                         width: 2,
                       ),
                     ),
@@ -180,9 +190,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           Text(
                             'Change Password',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
+                              fontFamily: settingsOptionsTextFont,
+                              color: settingOptionsText,
+                              fontSize: settingOptionsTextSize,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -197,14 +207,14 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 children: [
                                   Icon(
                                     Icons.info,
-                                    color: Colors.blue,
+                                    color: settingOptionsIcons,
                                     size: 30,
                                   ),
                                   Text(
                                     'Smartphone info',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat',
-                                      color: Color(0xFFf5f000),
+                                      color: settingsOptionsIconsText,
                                     ),
                                   ),
                                 ],
@@ -235,10 +245,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color(0xFF262D34),
+                      color: settingsOptionsBox,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: Color(0xFF090F13),
+                        color: settingsOptionBorderBox,
                         width: 2,
                       ),
                     ),
@@ -251,9 +261,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           Text(
                             'Notification Settings',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
+                              fontFamily: settingsOptionsTextFont,
+                              color: settingOptionsText,
+                              fontSize: settingOptionsTextSize,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -268,14 +278,14 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 children: [
                                   Icon(
                                     Icons.info,
-                                    color: Colors.blue,
+                                    color: settingOptionsIcons,
                                     size: 30,
                                   ),
                                   Text(
                                     'click ',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat',
-                                      color: Color(0xFFf5f000),
+                                      color: settingsOptionsIconsText,
                                     ),
                                   ),
                                 ],
@@ -306,10 +316,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color(0xFF262D34),
+                      color:settingsOptionsBox,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: Color(0xFF090F13),
+                        color: settingsOptionBorderBox,
                         width: 2,
                       ),
                     ),
@@ -322,9 +332,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           Text(
                             'Terms of Services',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                              fontSize: 14,
+                              fontFamily: settingsOptionsTextFont,
+                              color: settingOptionsText,
+                              fontSize: settingOptionsTextSize,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -339,14 +349,14 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 children: [
                                   Icon(
                                     Icons.info,
-                                    color: Colors.blue,
+                                    color: settingOptionsIcons,
                                     size: 30,
                                   ),
                                   Text(
                                     'click ',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat',
-                                      color: Color(0xFFf5f000),
+                                      color: settingsOptionsIconsText,
                                     ),
                                   ),
                                 ],
